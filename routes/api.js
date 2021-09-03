@@ -32,9 +32,8 @@ module.exports = function (app) {
         updated_on: updated_on? updated_on:new Date(),
         created_by,
         open: true,
-        assigned_to,
-        status_text,
-        
+        assigned_to: assigned_to ? assigned_to: '',
+        status_text: status_text ? status_text: '',
       }
       const newIssue = await addNewIssue(issueData);
       const returnIssue = {...newIssue._doc}
